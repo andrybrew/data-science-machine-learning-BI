@@ -59,4 +59,15 @@ Dataset ini memiliki beberapa fitur dengan tipe data yang berbeda (numerik, kate
 * **Principal Component Analysis (PCA):**
    * Digunakan untuk mereduksi dimensi data, khususnya jika terdapat banyak fitur numerik yang saling berkorelasi. PCA dapat membantu dalam visualisasi dan pengurangan noise.
 
+# Introduction to Nowcasting
+## Mengenai Dataset Dummy synthetic_nowcasting_data.csv:
+Dataset ini disusun dengan mempertimbangkan beberapa korelasi yang masuk akal, misalnya:
+* **GDP_Growth**: Mewakili pertumbuhan ekonomi bulanan (dalam %). Semakin tinggi pertumbuhan, biasanya tingkat pengangguran cenderung menurun dan kepercayaan konsumen meningkat.
+* **Unemployment_Rate**: Dibuat dengan korelasi negatif terhadap GDP_Growth, artinya jika pertumbuhan ekonomi tinggi, tingkat pengangguran akan lebih rendah.
+* **Money_Supply**: Disimulasikan dengan tren naik selama 10 tahun, yang dapat berkontribusi pada peningkatan **Inflation_Rate**.
+* **Inflation_Rate**: Dipengaruhi oleh tingkat money supply. Jika money supply meningkat, inflasi cenderung naik.
+* **Interest_Rate**: Ditetapkan berdasarkan inflasi (bank sentral biasanya menaikkan suku bunga untuk mengendalikan inflasi). Dengan demikian, Interest_Rate cenderung lebih tinggi ketika inflasi tinggi.
+* **Exchange_Rate**: Mewakili nilai tukar lokal (misalnya Rupiah per USD) dan dipengaruhi oleh money supply (kebijakan moneter longgar dapat menyebabkan depresiasi) serta Interest_Rate (suku bunga yang lebih tinggi cenderung menarik investasi asing sehingga menguatkan nilai tukar).
+* **Consumer_Confidence_Index**: Dibentuk dari pengaruh positif GDP_Growth dan negatif Unemployment_Rate. Indeks ini mewakili tingkat kepercayaan konsumen terhadap kondisi ekonomi.
+
 ## 
